@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <style type="text/css">
+      html { height: 100%; }
       body {
+      height: 100%;
       font-family: "Minion Pro";
+      background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(255,255,255)), color-stop(100, rgb(240,240,240)) );
+      background-repeat: repeat-x;
       }
       #content {
       width: 1024px;
@@ -70,9 +74,9 @@
     <script type="text/javascript" src="https://raw.github.com/cameronmcefee/plax/master/js/plax.js"></script>
     <script type="text/javascript">
       $(function() {
-        $("#other").plaxify({"xRange": 10, "yRange": 10});
-        $("#blog").plaxify({"xRange": 20, "yRange": 20});
-        $("#cv").plaxify({"xRange": 40, "yRange": 40});
+        $("#other").plaxify({"xRange": 10, "yRange": 0});
+        $("#blog").plaxify({"xRange": 20, "yRange": 0});
+        $("#cv").plaxify({"xRange": 50, "yRange": 0});
         $.plax.enable();
       });
     </script>
@@ -80,17 +84,35 @@
   <body>
     <div id="content" class="focus_cv">
       <div style="position: absolute; width: 100%;">
-	<div id="other" class="obj" onmouseover="document.getElementById('content').className = 'focus_other';">
-	  <a href="#">Other</a>
-	  <em>What else is there?</em>
+	<div id="other" class="obj" onmouseover="document.getElementById('content').className = 'focus_other';" style="opacity: 0.7;">
+	  <div style="height: 100px; margin-bottom: -70px; opacity: 0.25; -webkit-transform: skewx(45deg) translatex(43px) translatey(-33px) scaleY(0.15); -webkit-transform-origin: bottom left;">
+	    <a href="#">Other</a>
+	    <em>What else is there?</em>
+	  </div>
+	  <div>
+	    <a href="#">Other</a>
+	    <em>What else is there?</em>
+	  </div>
 	</div>
-	<div id="blog" class="obj" onmouseover="document.getElementById('content').className = 'focus_blog';">
-	  <a href="#">Blog</a>
-	  <em>A collection of my thoughts.</em>
+	<div id="blog" class="obj" onmouseover="document.getElementById('content').className = 'focus_blog';" style="opacity: 0.8;">
+	  <div style="height: 100px; margin-bottom: -70px; opacity: 0.25; -webkit-transform: skewx(45deg) translatex(7px) translatey(0px) scaleY(0.25); -webkit-transform-origin: bottom left;">
+	    <a href="#">Blog</a>
+	    <em>A collection of my thoughts.</em>
+	  </div>
+	  <div>
+	    <a href="#">Blog</a>
+	    <em>A collection of my thoughts.</em>
+	  </div>
 	</div>
 	<div id="cv" class="obj" onmouseover="document.getElementById('content').className = 'focus_cv';">
-	  <a href="http://eegg.github.com/cv">CV</a>
-	  <em>Find out a little more about me.</em>
+	  <div style="height: 100px; margin-bottom: -100px; opacity: 0.25; -webkit-transform: skewx(45deg) translatex(-100px) translatey(50px) scaleY(0.5); -webkit-transform-origin: bottom left;">
+	    <a href="http://eegg.github.com/cv">CV</a>
+	    <em>Find out a little more about me.</em>
+	  </div>
+	  <div style="height: 100px;">
+	    <a href="http://eegg.github.com/cv">CV</a>
+	    <em>Find out a little more about me.</em>
+	  </div>
 	</div>
       </div>
     </div>
