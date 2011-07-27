@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      body {
+      font-family: "Minion Pro";
+      }
+      #content {
+      width: 1024px;
+      height: 100px;
+      margin: 0 auto;
+      }
+      #cv, #blog, #other {
+      position: absolute;
+      color: transparent;
+      -webkit-transition: text-shadow 0.5s linear;
+      -moz-transition: text-shadow 0.5s linear;
+      -o-transition: text-shadow 0.5s linear;
+      transition: text-shadow 0.5s linear;
+      }
+      #other {
+      top: 100px;
+      left: 700px;
+      }
+      #blog {
+      top: 100px;
+      left: 100px;
+      }
+      #cv {
+      top: 250px;
+      left: 400px;
+      }
+
+      a {
+      color: black;
+      text-decoration: none;
+      color: transparent;
+      }
+      #other a { font-size: 2em; }
+      #blog a { font-size: 4.5em; }
+      #cv a { font-size: 15em; }
+
+      
+      em {
+        margin-left: 1em;
+        opacity: 0;
+        -webkit-transition: opacity 0.5s linear;
+        -moz-transition: opacity 0.5s linear;
+        -o-transition: opacity 0.5s linear;
+        transition: opacity 0.5s linear;
+      }
+      .focus_other #other em { opacity: 1; }
+      .focus_blog #blog em { opacity: 1; }
+      .focus_cv #cv em { opacity: 1; }
+
+      .focus_other #other { text-shadow: 0 0 0px black; }
+      .focus_other #blog { text-shadow: 0 0 15px black; }
+      .focus_other #cv { text-shadow: 0 0 50px black; }
+
+      .focus_blog #other { text-shadow: 0 0 25px black; }
+      .focus_blog #blog { text-shadow: 0 0 0px black; }
+      .focus_blog #cv { text-shadow: 0 0 25px black; }
+
+      .focus_cv #other { text-shadow: 0 0 50px black; }
+      .focus_cv #blog { text-shadow: 0 0 15px black; }
+      .focus_cv #cv { text-shadow: 0 0 0px black; }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="plax/js/plax.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#other").plaxify({"xRange": 10, "yRange": 10});
+        $("#blog").plaxify({"xRange": 20, "yRange": 20});
+        $("#cv").plaxify({"xRange": 40, "yRange": 40});
+        $.plax.enable();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content" class="focus_cv">
+      <div style="position: absolute; width: 100%;">
+	<div id="other" class="obj" onmouseover="document.getElementById('content').className = 'focus_other';">
+	  <a href="#">Other</a>
+	  <em>What else is there?</em>
+	</div>
+	<div id="blog" class="obj" onmouseover="document.getElementById('content').className = 'focus_blog';">
+	  <a href="#">Blog</a>
+	  <em>A collection of my thoughts.</em>
+	</div>
+	<div id="cv" class="obj" onmouseover="document.getElementById('content').className = 'focus_cv';">
+	  <a href="http://eegg.github.com/cv">CV</a>
+	  <em>Find out a little more about me.</em>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
